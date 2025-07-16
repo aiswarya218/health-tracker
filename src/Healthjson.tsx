@@ -67,21 +67,3 @@ const  App: React.FC = () => {
 };
 
 export default App;
-
-
-
-
-
-// interface HealthData {
-//     steps: number;
-//     water: number;
-//     sleep: number;
-// }
-
-// const [form, setForm] = useState<HealthData>({
-//     steps: 0,
-//     water: 0,
-//     sleep: 0,
-// });
-
-// setForm({ ...form, sleep: 7 });
