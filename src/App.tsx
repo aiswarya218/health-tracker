@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import HealthForm from './HealthForm';
+import HealthSummary from './HealthSummary';
 
-function App() {
+export interface HealthData {
+  steps: number;
+  water: number;
+  sleep: number;
+}
+
+const App: React.FC = () => {
+  const [data, setData] = useState<HealthData>({
+    steps: 0,
+    water: 0,
+    sleep: 0,
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style = {{ padding: '20px', fontFamily: 'Arial' }}>
+      <h1> Health Tracker </h1>
+      <HealthForm onSubmit = {setData} />
+      <HealthSummary data = {data} />
     </div>
   );
-}
+};
 
 export default App;
